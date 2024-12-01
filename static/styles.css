@@ -1,0 +1,98 @@
+body {
+    font-family: 'Comfortaa', cursive;
+    background: linear-gradient(45deg, #89CFF0, #A5F1E9);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #2C3E50;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.flames-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.flames-card:hover {
+    transform: scale(1.02);
+}
+
+h3 {
+    color: #2E8B57;
+    margin-bottom: 30px;
+}
+h1 {
+    color: #2E8B57;
+    margin-bottom: 10px;
+}
+
+
+
+.input-group {
+    margin-bottom: 20px;
+    margin-right: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #20B2AA;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #20B2AA;
+    border-radius: 8px;
+    font-family: 'Comfortaa', cursive;
+    background: rgba(255,255,255,0.7);
+}
+
+button {
+    background: #2E8B57;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Comfortaa', cursive;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #20B2AA;
+}
+
+.result-card {
+    background: rgba(240, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: medium;
+    animation: fadeIn 0.5s ease;
+}
+
+.names {
+    font-weight: bold;
+    color: #2E8B57;
+}
+
+.prediction {
+    font-size: 1.5em;
+    color: #20B2AA;
+    text-transform: uppercase;
+}
+
+

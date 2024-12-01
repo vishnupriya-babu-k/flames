@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLAMES Relationship Predictor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="flames-card">
+            <h1>F.L.A.M.E.S</h1>
+            <h3>The most reliable way to predict your relationship 👍</h3>
+            <form method="POST" id="flames-form" action="/">
+                <div class="input-group">
+                    <label for="name1">Unga Name</label>
+                    <input type="text" id="name1" name="name1" required placeholder="Enter your name">
+                </div>
+                <div class="input-group">
+                    <label for="name2">Avanga Name</label>
+                    <input type="text" id="name2" name="name2" required placeholder="Enter their name">
+                </div>
+                <button type="submit">FLAMES podalam</button>
+            </form>
+
+            {% if result %}
+            <div class="result-card">
+                <!-- <h2>Relationship Prediction</h2> -->
+                <p class="names">{{ result.name1 }} + {{ result.name2 }}</p>
+                <p class="prediction">{{ result.result }}</p>
+                <input type="hidden" id="result-value" value="{{ result.result }}">
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <script src="confetti.js"></script>
+<script src="hearts.js"></script>
+<script src="knives.js"></script>
+    <script>
+        document.getElementById('flames-form').addEventListener('submit', function(e) {
+            const result = document.getElementById('result-value');
+            if (result) {
+                const resultText = result.value.toLowerCase();
+                
+                switch(resultText) {
+                    case 'lovers':
+                        createHearts();
+                        break;
+                    case 'marriage':
+                        createHearts();
+                        break;
+                    case 'enemies':
+                        createKnives();
+                        break;
+                    default:
+                        createConfetti();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
