@@ -52,5 +52,11 @@ def index():
         result = flames_game(name1, name2)
     return render_template("index.html", result=result)
 
+
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+
 if __name__ == "__main__":
     app.run(debug=True)
